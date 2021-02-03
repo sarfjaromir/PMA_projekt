@@ -1,0 +1,49 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Searching
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-card class="welcome-card">
+    <ion-card-content>
+
+    <ion-input [(ngModel)]="myinput" (ionChange)=_zmenaTextu($event) placeholder="Type finding phrase..."></ion-input>
+    <ion-range dualKnobs=true (ionChange)=_zmenaTextu($event) [(ngModel)]="vaha" min=0 pin="true" max={{maxW}} step="1"></ion-range>
+    <ion-label>Weight: {{vaha.lower}} - {{vaha.upper}} kg</ion-label>
+    <ion-range dualKnobs=true (ionChange)=_zmenaTextu($event) [(ngModel)]="vyska" min=0 pin="true" max={{maxH}} step="1"></ion-range>
+    <ion-label>Height: {{vyska.lower}} - {{vyska.upper}} cm</ion-label>
+  </ion-card-content>
+ </ion-card>
+
+<ion-card>
+  <ion-card-content>
+    <div *ngFor="let item of itemsShow" class="list_item">
+      <div class="tab-group">
+        <div class="tab">
+          <input type="checkbox" (click)="itemSelected(item)" id={{item[9]}} name="tabs">
+          <label for={{item[9]}}>
+          <p>{{item[0]}} {{signArr[indexSign]}}</p>
+          </label>
+          <img style="width:80%;" src={{item[1]}} alt="{{item[0]}}"/>
+
+          <div class="tab-content">
+            <ul>
+              <li *ngIf="item[2]">Weight: {{item[2]}} kg</li>
+              <li *ngIf="item[3]">Height: {{item[3]}} cm</li>
+              <li *ngIf="item[4]">Life span: {{item[4]}}</li>
+              <li *ngIf="item[5]">Breed group: {{item[5]}}</li>
+              <li *ngIf="item[6]">Bred for: {{item[6]}}</li>
+              <li *ngIf="item[7]"> Origin: {{item[7]}}</li>
+              <li *ngIf="item[8]"> Temperament: {{item[8]}}</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </ion-card-content>
+  </ion-card>
+</ion-content>

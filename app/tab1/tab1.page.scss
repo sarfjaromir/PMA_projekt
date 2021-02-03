@@ -1,0 +1,82 @@
+
+label p{
+  margin: 0;
+  font-weight: bold;
+}
+.img{
+  width: 100%;
+  object-fit:contain;
+}
+.tab-group{
+  margin: 3em auto;
+  max-width: 503mm;
+  width: 100%;
+}
+.tab{
+  position: relative;
+  width: 100%;
+}
+.tab input{
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0;
+}
+.tab label{
+  background: white;
+  color: black;
+  display: block;
+  font-weight: bolder;
+  line-height: 3;
+  padding-left: .5em;
+  margin-bottom: .5em;
+  border: 1px white;
+}
+.tab input:focus + label,
+.tab label:hover{
+  // background-color: blue;
+  color: red;
+  transition: .3s;
+}
+.tab-content{
+  max-height: 0;
+  overflow: hidden;
+  transition: all .5s;
+  text-align: left;
+}
+.tab-content p{
+  margin: 1em 0;
+  margin-left: 2em;
+}
+.tab input:checked ~ .tab-content{
+  max-height: 20em;
+}
+
+.btn{
+  background-color: green;
+  margin:auto;
+  width: 100%
+}
+.box{
+  display: flex;
+}
+.b1{
+  flex-grow: 1;
+  width: 250px;
+}
+.b2{
+  flex-grow: 1;
+  float: right;
+}
+.list_item{
+  margin-bottom: 20px;
+  text-align: center;
+}
+.hidden{
+  visibility: hidden;
+  height: 0px;
+}
+.visible{
+  visibility: visible;
+  height: auto;
+}
