@@ -1,0 +1,32 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      History
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+    <ion-card-content>
+      <div *ngFor="let item of historyArray" class="list_item">
+        <div class="tab-group">
+          <div class="tab">
+            <h2>Date: {{item.date}}</h2>
+            <label for={{item.breed}}>
+            <p>Breed: {{item.breed}}</p>
+            </label>
+            <div class="tab-content">
+              <h3>Filters:</h3>
+              <ul>
+                <li *ngIf="item.input">Input string: {{item.input}}</li>
+                <li *ngIf="item.weightMax">Weight: {{item.weightMin}} - {{item.weightMax}} kg</li>
+                <li *ngIf="item.heightMax">Height: {{item.heightMin}} - {{item.heightMax}} cm</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
